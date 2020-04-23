@@ -1,3 +1,5 @@
+//This is the parent class. This class shares getters and properties to the other classes.
+
 class Media {
     constructor(title) {
     this._title = title;
@@ -36,6 +38,8 @@ class Media {
     }
 }
 
+// This class takes getters and properties from class Media
+
 class Book extends Media {
     constructor(author, title, pages) {
         super(title);
@@ -51,6 +55,8 @@ class Book extends Media {
         return this._pages = pages;
     }
 }
+
+// This class takes getters and properties from class Media
 
 class Movie extends Media {
     constructor(director, title, runTime) {
@@ -68,10 +74,13 @@ class Movie extends Media {
     }
 }
 
+// New class instance
 
 const historyOfEverything = new Book('Bill Bryson', 'A Short History of Nearly Everything', 544);
 historyOfEverything.toggleCheckOutStatus();
 console.log(historyOfEverything.isCheckedOut);
+
+// New class instance
 
 const speed = new Movie('Jan de Bont', 'Speed', 116);
 speed.toggleCheckOutStatus();
